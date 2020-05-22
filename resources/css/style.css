@@ -370,8 +370,19 @@ p {
 }
 
 .ideas__slider__image {
-    transform: scale(1.02);
     max-width: 90%;
+    max-height: 400px;
+    opacity: 0.6;
+    overflow: hidden;
+    transition: opacity .2s;
+}
+
+.ideas__slider__image.slick-active {
+    opacity: 1;
+}
+
+.slick-list {
+    background-color: #000;
 }
 
 .ideas__inner {
