@@ -84,6 +84,21 @@ p {
     content: none !important;
 }
 
+.header__block.position__fixed {
+    padding-top: 0;
+}
+
+.position__fixed {
+    position: fixed;
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    background-color: rgba(17, 17, 17, 0.7);
+    padding: 20px !important;
+    z-index: 99999;
+    transition: .7s;
+}
+
 /*Header
 =================*/
 
@@ -126,6 +141,87 @@ p {
     margin-right: 20px;
     text-decoration: none;
     color: #ffffff;
+    transition: padding .2s, border .2s;
+}
+
+.nav__item:hover,
+.nav__item:active {
+    padding: 5px 8px;
+    border: 1px solid #bba790;
+}
+
+.mobile__nav__container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999999999;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.mobile__close {
+    height: 10vh;
+    margin-top: 4vh;
+    text-align: center;
+}
+
+.mobile__close img {
+    width: 35px;
+    height: auto;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.mobile__close img:hover {
+    transform: scale(1.5);
+}
+
+.mobile__nav {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    font-size: 145%;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+
+}
+
+.mobile__nav .nav__item:link,
+.mobile__nav .nav__item:visited {
+    margin: 2vh auto;
+}
+
+.menu__container {
+    margin-left: auto;
+    display: none;
+}
+
+.menu__small {
+    background: #FCFCFC;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 20px;
+    height: 2px;
+    border-bottom: 1px solid white;
+}
+
+.menu__small:before {
+    top: -8px;
+}
+
+.menu__small:after {
+    top: 8px;
+}
+
+.menu__small:before,
+.menu__small:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: #FCFCFC;
 }
 
 .header__search {
@@ -850,6 +946,18 @@ p {
 
 @media screen and (max-width: 780px) {
 
+    .menu__container {
+        display: block;
+        height: 22px;
+        width: 20px;
+        transform: translateY(40%);
+        cursor: pointer;
+    }
+
+    .nav {
+        display: none;
+    }
+
     .services {
         margin: 30px 0;
     }
@@ -982,6 +1090,24 @@ p {
 
     .copyright__block__2 {
         margin-left: unset;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+
+    html, body {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+
+   .header__block .title {
+        display: none;
+    }
+
+    .header_inner {
         margin-top: 20px;
     }
 }
